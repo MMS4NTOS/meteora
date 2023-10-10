@@ -1,0 +1,227 @@
+.cabecalho {
+    background-color: var(--cor-preta);
+    padding: 1rem 1.4375rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.cabecalho nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.cabecalho_esquerda, .cabecalho_direita {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    
+}
+
+.logo {
+    width: 8.297rem;
+    height: 2rem;
+    flex-shrink: 0;
+}
+
+.cabecalho_esquerda {
+    gap: 2.5rem;
+}
+
+.link_desktop {
+    text-decoration: none;
+    color: var(--cor-branca);
+    font-family: var(--fonte-inter);
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.4375rem;
+}
+
+.cabecalho_direita {
+    gap: 1rem;
+}
+
+.cabecalho input {
+    border: 1px solid var(--cor-branca);
+    width: 10.625rem;
+    height: 2.375rem;
+    border-radius: 0.125rem;
+    font-family: var(--fonte-inter);
+    padding-left: 1rem;
+    font-size: 0.9rem;
+}
+
+.cabecalho_button {
+    border-radius: 0.125rem;
+    height: 2.375rem;
+    padding: 0.6rem 0.75rem;
+    border: 1px solid #FFF;
+    background-color: transparent;
+    font-size: 1rem;
+    color: var(--cor-branca);
+    font-family: var(--fonte-inter);
+}
+
+.botao_hamburguer, .botao_rotulo, .cabecalho_menu-hamburguer, .cabecalho_mobile {
+    display: none;
+}
+
+
+@media screen and (max-width: 768px) {
+    .logo {
+        width: 6.22275rem;
+        height: 1.5rem;
+    }
+
+    .cabecalho_esquerda {
+        gap: 1.25rem;
+    }
+
+    .link_desktop, .cabecalho_button {    
+        font-size: 0.8125rem;
+        line-height: 1.25rem; 
+    }
+
+    .cabecalho input {
+        width: 9.0625rem;
+        font-size: 0.8rem;
+    }
+
+
+
+}
+
+@media screen and (max-width: 657px)  {
+    .cabecalho {
+        background-color: var(--cor-branca);
+        padding: 0;
+    }
+
+    .cabecalho nav {
+        align-items: normal;
+    }
+
+    .cabecalho_container {
+        display: flex;
+        background-color: var(--cor-preta);
+        justify-content: space-between;
+        padding: 1rem;
+    }
+
+    .link_desktop {
+        display: none;
+    }
+
+    .cabecalho nav {
+        flex-direction: column;
+    }
+
+    .cabecalho_direita {
+        background-color: var(--cor-branca);
+        padding: 1rem;
+        box-sizing: border-box;
+        gap: 0.5rem;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .cabecalho_item_input {
+        width: 60%;
+    }
+
+    .cabecalho_direita input {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .cabecalho_button {
+        color: var(--cor-preta);
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .cabecalho_direita input, .cabecalho_button {
+        border: 1px solid var(--cor-preta);
+    }
+
+    .botao_rotulo {
+        display: block;
+    }
+
+    .cabecalho_mobile {
+        display: flex;
+        flex-direction: column;
+        background-color: var(--cor-chumbo);
+        width: 0;
+        z-index: 4;
+        height: 15.3125rem;
+        gap: 1rem;
+        padding-top: 3rem;
+        position: absolute;
+        right: 0;
+        top: 0;
+        transition: ease-out 1.5s;
+    }
+
+    .mobile_link, .home {
+        display: none;
+        text-decoration: none;
+        font-family: var(--fonte-inter);
+        font-size: 1rem;
+        border-bottom: 1px solid var(--cor-branca);
+        padding-bottom: 0.8rem;
+    }
+
+    .home {
+        color: var(--cor-verde);
+    }
+
+    .mobile_link {
+        color: var(--cor-branca);
+    }
+   
+    .botao_hamburguer:checked ~ .cabecalho_mobile {
+        transition: 1.5s;
+        padding: 1.5rem;
+        padding-top: 3rem;
+        width: 9rem;
+
+    }
+    .cabecalho_menu-hamburguer {
+        background-color: var(--cor-preta);
+        display: block;
+        width: 1.5rem;
+        height: 1.5rem;
+        background-image: url("../../../assets/Mobile/navbar-mobile/icon.svg")
+    }
+
+    .botao_hamburguer:checked ~ .cabecalho_mobile .fechar {
+        width: 1.125rem;
+        height: 1.0625rem;
+        transition: 1.5s;
+        z-index: 1;
+        
+    }
+
+    .botao_hamburguer:checked ~ .cabecalho_mobile .fechar,
+    .botao_hamburguer:checked ~ .cabecalho_mobile a.home,
+    .botao_hamburguer:checked ~ .cabecalho_mobile a.mobile_link {
+        display: block;     
+    }
+
+    .fechar {
+        display: none;
+        width: 0;
+        height: 0;
+        position: absolute;
+        top: 1rem;
+        right: 0.8rem;
+        transition: 1.5s;
+
+    }
+
+}

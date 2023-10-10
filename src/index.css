@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Inter&display=swap');
+
+:root {
+    --cor-preta: #000000;
+    --cor-cinza: #cccccc;
+    --cor-borda: rgba(0, 0, 0, 0.13);;
+    --cor-chumbo: #343A40;
+    --cor-verde: #DAFF01;
+    --cor-azul: #9353ff;
+    --cor-rosa: #EE6471;
+    --cor-laranja: #F87F46;
+    --cor-branca: #FFFFFF;
+    --transparente: #D8D8D8;
+    --fonte-inter: 'Inter'
+}
+
+body {
+    font-family: var(--fonte-inter);
+}
+
