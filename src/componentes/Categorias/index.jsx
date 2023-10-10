@@ -4,22 +4,22 @@ const Categorias = () => {
 
     const listaCategorias = [
         {Nome:'Camisetas',
-         url: '/../../assets/Desktop/Categorias/Camiseta.png' 
+         url: '/../../../assets/Desktop/Categorias/Camiseta.png' 
         },
         {Nome:'Bolsas',
-         url: '/../../assets/Desktop/Categorias/Bolsa.png' 
+         url: '/../../../assets/Desktop/Categorias/Bolsa.png' 
         },
         {Nome:'Calçados',
-         url: '/../../assets/Desktop/Categorias/tenis.png' 
+         url: '/../../../assets/Desktop/Categorias/tenis.png' 
         },
         {Nome: 'Calças',
-         url: '/../../assets/Desktop/Categorias/calça.png' 
+         url: '/../../../assets/Desktop/Categorias/calça.png' 
         },
         {Nome:'Casacos',
-        url: '/../../assets/Desktop/Categorias/Jaqueta.png' 
+        url: '/../../../assets/Desktop/Categorias/Jaqueta.png' 
         },
         {Nome: 'Óculos',
-        url: '/../../assets/Desktop/Categorias/óculos.png' 
+        url: '/../../../assets/Desktop/Categorias/óculos.png' 
     }       
        ]
 
