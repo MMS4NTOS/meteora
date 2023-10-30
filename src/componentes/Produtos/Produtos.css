@@ -57,6 +57,11 @@
     border: none;
 }
 
+.produto_botao:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
+    cursor:pointer;
+}
 .produto_descricao {
     width: 21rem;
     height: 3rem;
@@ -70,12 +75,10 @@
     box-sizing: border-box;
     position: fixed;
     padding: 0.1rem;
-    top: 2%;
-    left: 20%;
-}
-
-dialog::backdrop{
-    background: rgba(0, 0, 0, .7);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 4;
 }
 
 .modal_titulo {
@@ -172,14 +175,14 @@ dialog::backdrop{
     }
 
     .modal {
-        max-height: 100vh;
-        overflow-y: auto;
-        left: 5%;
+        height: 90%;
+        left: 50%;
         width: 90%;
     }
 
     .modal_conteudo {
         flex-direction: column;
+        overflow: scroll;
     }
 
     .descricao_modal {

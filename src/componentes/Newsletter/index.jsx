@@ -12,20 +12,22 @@ const Newsletter = () => {
             Quer receber nossas novidades, promoções exclusivas e 10% OFF na
             primeira compra? Cadastre-se!
           </h3>
-          <form className="news_form">
+          <form
+            onSubmit={(e) => {
+              e.preventDefault(), setCadastro(true);
+            }}
+            className="news_form"
+          >
             <input
+              required={true}
               className="news_input"
               type="e-mail"
               placeholder="Digite seu e-mail"
             ></input>
-            <button onClick={(e) => {e.preventDefault(), setCadastro(true)}} className="news_button">
-              Enviar
-            </button>
+            <button className="news_button">Enviar</button>
           </form>
         </div>
-        {
-        cadastro ? 
-           ( 
+        {cadastro ? (
           <dialog className="modal_news">
             <div className="modal_titulo">
               <div className="modal_titulo_direita">
@@ -42,12 +44,14 @@ const Newsletter = () => {
               />
             </div>
             <div className="modal_conteudo">
-              <p className="descricao_modal_news">Em breve você receberá novidades exclusivas da Meteora!</p>
+              <p className="descricao_modal_news">
+                Em breve você receberá novidades exclusivas da Meteora!
+              </p>
             </div>
           </dialog>
-        ) : 
-        ('')
-        }
+        ) : (
+          ""
+        )}
       </section>
     );
 }

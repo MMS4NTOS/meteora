@@ -1,19 +1,28 @@
+import { useState } from 'react';
 import './Header.css'
 
-const Header = () => {
+const Header = (props) => {
+
+    const [busca, setBusca] = useState("")
+
     return (
       <header className="cabecalho">
         <nav>
-          <div className='cabecalho_container'>
+          <div className="cabecalho_container">
             <ul className="cabecalho_esquerda">
               <li>
                 <img
+                  onClick={() => window.location.reload()}
                   className="logo"
                   src="../assets/Desktop/Logo desktop.png"
                 />
               </li>
               <li>
-                <a className="link_desktop" href="#">
+                <a
+                  className="link_desktop"
+                  href="#"
+                  onClick={() => window.location.reload()}
+                >
                   Home
                 </a>
               </li>
@@ -66,14 +75,23 @@ const Header = () => {
               </li>
             </ul>
           </div>
-          <ul className="cabecalho_direita">
-            <li className='cabecalho_item_input'>
-              <input type="text" placeholder="Digite o produto" />
+          <form
+            className="cabecalho_direita"
+            onSubmit={(e) => {
+              e.preventDefault(), props.pesquisarProduto(busca);
+            }}
+          >
+            <li className="cabecalho_item_input">
+              <input
+                type="text"
+                placeholder="Digite o produto"
+                onChange={(e) => setBusca(e.target.value)}
+              />
             </li>
-            <li className='cabecalho_item_button'>
+            <li className="cabecalho_item_button">
               <button className="cabecalho_button"> Buscar </button>
             </li>
-          </ul>
+          </form>
         </nav>
       </header>
     );

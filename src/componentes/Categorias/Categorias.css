@@ -19,6 +19,12 @@
     flex-direction: column;
 }
 
+.categoria_card:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
+    cursor:pointer;
+}
+
 .categoria_imagem {
     width: 10rem;
     height: 9.8125rem;

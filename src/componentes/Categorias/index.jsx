@@ -1,6 +1,6 @@
 import './Categorias.css'
 
-const Categorias = () => {
+const Categorias = (props) => {
 
     const listaCategorias = [
         {Nome:'Camisetas',
@@ -9,28 +9,30 @@ const Categorias = () => {
         {Nome:'Bolsas',
          url: '/assets/Desktop/Categorias/Bolsa.png' 
         },
-        {Nome:'Calçados',
+        {Nome:'Calcados',
          url: '/assets/Desktop/Categorias/tenis.png' 
         },
-        {Nome: 'Calças',
+        {Nome: 'Calcas',
          url: '/assets/Desktop/Categorias/calça.png' 
         },
         {Nome:'Casacos',
         url: '/assets/Desktop/Categorias/Jaqueta.png' 
         },
-        {Nome: 'Óculos',
+        {Nome: 'Oculos',
         url: '/assets/Desktop/Categorias/óculos.png' 
     }       
        ]
-
-
     return (
       <>
         <section>
           <h2 className="categorias_titulo">Busque por categoria:</h2>
           <div className="categorias">
             {listaCategorias.map((categoria) => (
-              <div key={categoria.Nome} className="categoria_card">
+              <div
+                key={categoria.Nome}
+                className="categoria_card"
+                onClick={() => {props.filtrarProduto(categoria.Nome)}}
+              >
                 <img
                   className="categoria_imagem"
                   src={categoria.url}

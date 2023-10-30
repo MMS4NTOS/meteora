@@ -1,5 +1,5 @@
 import './Banner.css'
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+import { Navigation, Pagination, A11y } from 'swiper/modules';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -7,19 +7,16 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
 
 const Banner = () => {
     return (
       <Swiper
         // install Swiper modules
-        modules={[Navigation, Pagination, Scrollbar, A11y]}
+        modules={[Navigation, Pagination, A11y]}
         spaceBetween={50}
         slidesPerView={1}
         navigation
         pagination={{ clickable: true }}
-        onSwiper={(swiper) => console.log("clicou aqui")}
-        onSlideChange={() => console.log("slide change")}
       >
         <SwiperSlide>
           <picture>
@@ -60,7 +57,6 @@ const Banner = () => {
             <img className="banner" src="../../../assets/Mobile/banner3.png" />
           </picture>
         </SwiperSlide>
-        ...
       </Swiper>
     );
 };
