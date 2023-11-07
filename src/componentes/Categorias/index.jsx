@@ -9,16 +9,16 @@ const Categorias = (props) => {
         {Nome:'Bolsas',
          url: '/assets/Desktop/Categorias/Bolsa.png' 
         },
-        {Nome:'Calcados',
+        {Nome:'Calçados',
          url: '/assets/Desktop/Categorias/tenis.png' 
         },
-        {Nome: 'Calcas',
+        {Nome: 'Calças',
          url: '/assets/Desktop/Categorias/calça.png' 
         },
         {Nome:'Casacos',
         url: '/assets/Desktop/Categorias/Jaqueta.png' 
         },
-        {Nome: 'Oculos',
+        {Nome: 'Óculos',
         url: '/assets/Desktop/Categorias/óculos.png' 
     }       
        ]
