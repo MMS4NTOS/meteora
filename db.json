@@ -6,43 +6,48 @@
         "Descrição":
           "Multicores e tamanhos. Tecido de algodão 100% fresquinho para o verão. Modelagem unissex.",
         "Preço": 70.0,
-        "Categoria": "Camisetas"
+        "Categoria": "Camisetas",
+        "id": "1"
       },
       {
         "Imagem": "/assets/Desktop/Cards/Calça.png",
         "Nome": "Calça Alfaiataria",
-        "Descrição":
-          "Modelo Wide Leg alfaiataria em linho. Uma peça pra vida toda!",
+        "Descrição": "Modelo Wide Leg alfaiataria em linho. Uma peça pra vida toda!",
         "Preço": 180.0,
-        "Categoria": "Calcas"
+        "Categoria": "Calcas",
+        "id": "2"
       },
       {
         "Imagem": "/assets/Desktop/Cards/Tenis.png",
         "Nome": "Tênis Chunky",
         "Descrição": "Snicker casual com solado mais alto e modelagem robusta. Modelo unissex.",
         "Preço": 250.0,
-        "Categoria": "Calcados"
+        "Categoria": "Calcados",
+        "id": "3"
       },
       {
         "Imagem": "/assets/Desktop/Cards/Jaqueta.png",
         "Nome": "Jaqueta Jeans",
         "Descrição": "Modelo unissex oversized com gola de camurça. Atemporal e autêntica!",
         "Preço": 150.0,
-        "Categoria": "Casacos"
+        "Categoria": "Casacos",
+        "id": "4"
       },
       {
         "Imagem": "/assets/Desktop/Cards/Bolsa.png",
         "Nome": "Bolsa coringa",
         "Descrição": "Bolsa camel em couro sintético de alta duração. Ideal para acompanhar você por uma vida!",
         "Preço": 100.0,
-        "Categoria": "Bolsas"
+        "Categoria": "Bolsas",
+        "id": "5"
       },
       {
         "Imagem": "/assets/Desktop/Cards/óculos.png",
         "Nome": "Óculos Redondo",
         "Descrição": "Armação metálica em grafite com lentes arredondadas. Sem erro!",
         "Preço": 120.0,
-        "Categoria": "Oculos"
+        "Categoria": "Oculos",
+        "id": "6"
       }
     ]
 }

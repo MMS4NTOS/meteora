@@ -20,6 +20,11 @@
     
 }
 
+.cabecalho_form {
+    display: flex;
+    gap: 1rem;
+}
+
 .logo {
     width: 8.297rem;
     height: 2rem;
@@ -69,11 +74,25 @@
     display: none;
 }
 
+.cart_mobile {
+    display: none;
+}
+
 
 @media screen and (max-width: 768px) {
+    .cart_mobile {
+        display: block;
+    }
+
     .logo {
         width: 6.22275rem;
         height: 1.5rem;
+    }
+
+    .menu_esquerda {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
     }
 
     .cabecalho_esquerda {
@@ -83,6 +102,10 @@
     .link_desktop, .cabecalho_button {    
         font-size: 0.8125rem;
         line-height: 1.25rem; 
+    }
+
+    .cart_desktop {
+        display: none;
     }
 
     .cabecalho input {
@@ -150,6 +173,7 @@
 
     .botao_rotulo {
         display: block;
+        align-self: center;
     }
 
     .cabecalho_mobile {

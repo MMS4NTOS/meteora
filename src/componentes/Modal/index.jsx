@@ -1,5 +1,9 @@
+import { useState } from "react";
 
 const Modal = (props) => {
+
+  const [adicionado, setAdicionado] = useState(false)
+
   return (
     <dialog className="modal">
       <div className="modal_titulo">
@@ -22,7 +26,7 @@ const Modal = (props) => {
           <h3 className="produto_nome">{props.nome}</h3>
           <p className="descricao_modal">{props.descricao}</p>
 
-          <h4 className="produto_preco">{props.preco}</h4>
+          <h4 className="produto_preco"> R$ {props.preco}</h4>
           <h5>Vendido e entregue por</h5>
           <fieldset className="descricao_radio radio_cores">
             <legend>Cores</legend>
@@ -74,9 +78,35 @@ const Modal = (props) => {
               <label htmlFor="GG">GG</label>
             </div>
           </fieldset>
-          <button className="produto_botao">Adicionar à sacola</button>
+          <button onClick={() => {props.adicionarCarrinho(props.produto), setAdicionado(true)}} className="produto_botao">Adicionar à sacola</button>
         </div>
       </div>
+       { adicionado ? (
+          <dialog className="modal_news">
+            <div className="modal_titulo">
+              <div className="modal_titulo_direita">
+                <img
+                  src="../../../assets/../../../assets/check-circle.svg"
+                  alt="foto produto"
+                />
+                <h2>Adicionado ao carrinho!</h2>
+              </div>
+              <img
+                onClick={() => setAdicionado(false)}
+                src="../../../assets/../../../assets/x.svg"
+                alt="X"
+              />
+            </div>
+            <div className="modal_conteudo">
+              <p className="descricao_modal_news">
+                Clique no ícone do carrinho para conferir o que você já colocou por lá 😉
+              </p>
+            </div>
+          </dialog>
+        ) : (
+          ""
+        )}
+      
     </dialog>
   );
 };

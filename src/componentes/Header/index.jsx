@@ -1,11 +1,13 @@
-import { useState } from 'react';
-import './Header.css'
+import { useState } from "react";
+import "./Header.css";
+import { Link } from "react-router-dom";
+
 
 const Header = (props) => {
+  const [busca, setBusca] = useState("");
 
-    const [busca, setBusca] = useState("")
-
-    return (
+  return (
+    <>
       <header className="cabecalho">
         <nav>
           <div className="cabecalho_container">
@@ -18,18 +20,13 @@ const Header = (props) => {
                 />
               </li>
               <li>
-                <a
+                <Link
                   className="link_desktop"
-                  href="#"
-                  onClick={() => window.location.reload()}
+                  to="/"
+                  onClick={() => window.location.assign()}
                 >
                   Home
-                </a>
-              </li>
-              <li>
-                <a className="link_desktop" href="#">
-                  Nossas lojas
-                </a>
+                </Link>
               </li>
               <li>
                 <a className="link_desktop" href="#">
@@ -42,10 +39,15 @@ const Header = (props) => {
                 </a>
               </li>
             </ul>
-            <input type="checkbox" id="menu" className="botao_hamburguer" />
-            <label htmlFor="menu" className="botao_rotulo">
-              <span className="cabecalho_menu-hamburguer"></span>
-            </label>
+            <div className="menu_esquerda">
+              <input type="checkbox" id="menu" className="botao_hamburguer" />
+              <label htmlFor="carrinho">
+                <img className="cart_mobile " src="../assets/Cart.svg" />
+              </label>
+              <label htmlFor="menu" className="botao_rotulo">
+                <span className="cabecalho_menu-hamburguer"></span>
+              </label>
+            </div>
 
             <ul className="cabecalho_mobile">
               <li className="fechar">
@@ -75,26 +77,33 @@ const Header = (props) => {
               </li>
             </ul>
           </div>
-          <form
-            className="cabecalho_direita"
-            onSubmit={(e) => {
-              e.preventDefault(), props.pesquisarProduto(busca);
-            }}
-          >
-            <li className="cabecalho_item_input">
-              <input
-                type="text"
-                placeholder="Digite o produto"
-                onChange={(e) => setBusca(e.target.value)}
-              />
-            </li>
-            <li className="cabecalho_item_button">
-              <button className="cabecalho_button"> Buscar </button>
-            </li>
-          </form>
+          <div className="cabecalho_direita">
+            <form
+              className="cabecalho_form"
+              onSubmit={(e) => {
+                e.preventDefault(), props.pesquisarProduto(busca);
+              }}
+            >
+              <li className="cabecalho_item_input">
+                <input
+                  type="text"
+                  placeholder="Digite o produto"
+                  onChange={(e) => setBusca(e.target.value)}
+                />
+              </li>
+              <li className="cabecalho_item_button">
+                <button className="cabecalho_button"> Buscar </button>
+              </li>
+            </form>
+
+            <label htmlFor="carrinho">
+              <img className="cart_desktop " src="../assets/Cart.svg" />
+            </label>
+          </div>
         </nav>
       </header>
-    );
-}
+    </>
+  );
+};
 
 export default Header;

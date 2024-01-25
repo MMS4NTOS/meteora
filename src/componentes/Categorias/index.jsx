@@ -1,3 +1,4 @@
+import { Outlet } from 'react-router-dom';
 import './Categorias.css'
 
 const Categorias = (props) => {
@@ -43,6 +44,7 @@ const Categorias = (props) => {
             ))}
           </div>
         </section>
+        <Outlet/>
       </>
     );
 }

@@ -37,8 +37,10 @@ const Produtos = (props) => {
               nome={produto.Nome}
               imagem={produto.Imagem}
               descricao={produto.Descrição}
-              preco={produto.preco}
+              preco={produto.Preço}
               fecharModal = {() => setProduto(false)}
+              produto={produto}
+              adicionarCarrinho = {(recebi) => props.adicionarCarrinho(recebi)}
             />
           ) : (
             ""
