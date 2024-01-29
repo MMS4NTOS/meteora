@@ -80,9 +80,7 @@
 
 
 @media screen and (max-width: 768px) {
-    .cart_mobile {
-        display: block;
-    }
+
 
     .logo {
         width: 6.22275rem;
@@ -96,7 +94,7 @@
     }
 
     .cabecalho_esquerda {
-        gap: 1.25rem;
+        gap: 1rem;
     }
 
     .link_desktop, .cabecalho_button {    
@@ -104,12 +102,10 @@
         line-height: 1.25rem; 
     }
 
-    .cart_desktop {
-        display: none;
-    }
+   
 
     .cabecalho input {
-        width: 9.0625rem;
+        width: 7.0625rem;
         font-size: 0.8rem;
     }
 
@@ -118,6 +114,14 @@
 }
 
 @media screen and (max-width: 657px)  {
+     .cart_mobile {
+        display: block;
+    }
+
+     .cart_desktop {
+        display: none;
+    }
+
     .cabecalho {
         background-color: var(--cor-branca);
         padding: 0;

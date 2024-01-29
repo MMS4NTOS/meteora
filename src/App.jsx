@@ -70,6 +70,7 @@ function App() {
         }
         return produtoAtual;
       });
+      localStorage.setItem("Carrinho", JSON.stringify(arr));
       setCarrinho(arr)
     }
 

@@ -71,6 +71,11 @@
         width: 4rem;
     }
 
+    .modal_news {
+        width: fit-content;
+        left: auto;
+    }
+
 }
 
 @media screen and (max-width: 480px) {
