@@ -1,18 +1,16 @@
-import { useEffect, useState } from 'react';
-import './Carrinho.css'
+import { useEffect, useState } from "react";
+import "./Carrinho.css";
 
-const Carrinho = ({ minhasCompras, alterarQuantidade, removerDoCarrinho}) => {
+const Carrinho = ({ minhasCompras, alterarQuantidade, removerDoCarrinho }) => {
+  const [valorTotal, setValorTotal] = useState(0);
 
-const [valorTotal, setValorTotal] = useState(0)
-  
-useEffect(() => {
-      const valor = minhasCompras
-        .map((produto) => produto.Preço * produto.quantidade)
-        .reduce((a, b) => a + b, 0);
-      setValorTotal(valor);
-    
-  })
-  
+  useEffect(() => {
+    const valor = minhasCompras
+      .map((produto) => produto.Preço * produto.quantidade)
+      .reduce((a, b) => a + b, 0);
+    setValorTotal(valor);
+  });
+
   return (
     <>
       <input type="checkbox" id="carrinho" className="carrinho_aside" />
@@ -45,9 +43,9 @@ useEffect(() => {
                             if (produto.quantidade > 1)
                               alterarQuantidade(produto, "-");
                             else removerDoCarrinho(produto.Nome);
-                          
-                            calcularValor();}  
-                         }
+
+                            calcularValor();
+                          }}
                           className="botao_carrinho"
                           src="../../../assets/../../../assets/remove.svg"
                           alt="Remover um do carrinho"
@@ -79,9 +77,8 @@ useEffect(() => {
                 </div>
               </li>
             ))}
-            
+
             <p className="item_carrinho_preco preco_total">
-              
               TOTAL R$ {valorTotal}
             </p>
           </ul>

@@ -10,84 +10,85 @@ import Produtos from "./componentes/Produtos";
 import Carrinho from "./componentes/Carrinho";
 
 function App() {
-
   const [listaProdutos, setListaProdutos] = useState([]);
-  
+
   const [listaOriginal, setListaOriginal] = useState([]);
 
-  
-  const [meuCarrinho, setCarrinho] = useState(JSON.parse(localStorage.getItem("Carrinho")) || []);
+  const [meuCarrinho, setCarrinho] = useState(
+    JSON.parse(localStorage.getItem("Carrinho")) || []
+  );
 
   useEffect(() => {
     const listarProdutos = async () => {
       const endPointAPI = `https://mms4ntos.github.io/meteoraProdutos.json`;
       try {
-        const resp = await fetch(
-          endPointAPI
-        );
+        const resp = await fetch(endPointAPI);
         const data = await resp.json();
-        setListaOriginal(data)
-        setListaProdutos(data)
+        setListaOriginal(data);
+        setListaProdutos(data);
       } catch (err) {
         console.log(err);
       }
     };
     listarProdutos();
-  }, []); 
+  }, []);
 
-
-   function filtrarProduto(categoria) {
-  
-    
-    const arr =  listaOriginal.filter(produto =>  produto.Categoria == categoria)
-    setListaProdutos(arr)
-    
+  function filtrarProduto(categoria) {
+    const arr = listaOriginal.filter(
+      (produto) => produto.Categoria == categoria
+    );
+    setListaProdutos(arr);
   }
 
-   function pesquisarProduto(texto) {
+  function pesquisarProduto(texto) {
+    const arr = listaOriginal.filter((produto) =>
+      JSON.stringify(produto).toLowerCase().includes(texto)
+    );
+    setListaProdutos(arr);
+  }
 
-      const arr = listaOriginal.filter(produto =>
-        JSON.stringify(produto).toLowerCase().includes(texto)
-        )
-      setListaProdutos(arr);
-   }
-
-   const addToCart = (produto) => {
-    setCarrinho(prev => [...prev, {...produto, quantidade: 1}])
+  const addToCart = (produto) => {
+    setCarrinho((prev) => [...prev, { ...produto, quantidade: 1 }]);
     localStorage.setItem(
       "Carrinho",
       JSON.stringify([...meuCarrinho, { ...produto, quantidade: 1 }])
     );
-   }
+  };
 
-   const alterarQuantidade = (produtoRecebido, operacao) => {
-      const arr = meuCarrinho.map((produtoAtual) => {
-        if (produtoRecebido.Nome == produtoAtual.Nome && operacao === "+") {
-          produtoAtual.quantidade++;
-        } 
-        else if (produtoRecebido.Nome == produtoAtual.Nome && operacao === "-") {
-          produtoAtual.quantidade--;  
-        }
-        return produtoAtual;
-      });
-      localStorage.setItem("Carrinho", JSON.stringify(arr));
-      setCarrinho(arr)
-    }
+  const alterarQuantidade = (produtoRecebido, operacao) => {
+    const arr = meuCarrinho.map((produtoAtual) => {
+      if (produtoRecebido.Nome == produtoAtual.Nome && operacao === "+") {
+        produtoAtual.quantidade++;
+      } else if (
+        produtoRecebido.Nome == produtoAtual.Nome &&
+        operacao === "-"
+      ) {
+        produtoAtual.quantidade--;
+      }
+      return produtoAtual;
+    });
+    localStorage.setItem("Carrinho", JSON.stringify(arr));
+    setCarrinho(arr);
+  };
 
-
-    const removerDoCarrinho = (produtoRecebido) => {
-
-        const arr = meuCarrinho.filter(
-          produtoAtual => produtoAtual.Nome !== produtoRecebido
-        );
-        localStorage.setItem("Carrinho", JSON.stringify(arr));
-        setCarrinho(arr)
-    }
+  const removerDoCarrinho = (produtoRecebido) => {
+    const arr = meuCarrinho.filter(
+      (produtoAtual) => produtoAtual.Nome !== produtoRecebido
+    );
+    localStorage.setItem("Carrinho", JSON.stringify(arr));
+    setCarrinho(arr);
+  };
 
   return (
     <>
       <BrowserRouter>
-        <Carrinho  minhasCompras={meuCarrinho} alterarQuantidade={(produto, operacao) => alterarQuantidade(produto, operacao)} removerDoCarrinho={(produto) => removerDoCarrinho(produto)}/>
+        <Carrinho
+          minhasCompras={meuCarrinho}
+          alterarQuantidade={(produto, operacao) =>
+            alterarQuantidade(produto, operacao)
+          }
+          removerDoCarrinho={(produto) => removerDoCarrinho(produto)}
+        />
         <Header pesquisarProduto={pesquisarProduto} />
         <Banner />
 
@@ -96,9 +97,15 @@ function App() {
             path="/"
             element={<Categorias filtrarProduto={filtrarProduto} />}
           >
-            <Route index element={<Produtos listaProdutos={listaProdutos} adicionarCarrinho={(produto) => addToCart(produto)}            
-            />}                
-           />
+            <Route
+              index
+              element={
+                <Produtos
+                  listaProdutos={listaProdutos}
+                  adicionarCarrinho={(produto) => addToCart(produto)}
+                />
+              }
+            />
           </Route>
           <Route path="/carrinho" element={<div>Meu carrinho</div>} />
           <Route path="*" element={<div> 404</div>} />
@@ -112,4 +119,4 @@ function App() {
   );
 }
 
-export default App
+export default App;

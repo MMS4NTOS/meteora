@@ -47,35 +47,35 @@ const Header = (props) => {
               <label htmlFor="menu" className="botao_rotulo">
                 <span className="cabecalho_menu-hamburguer"></span>
               </label>
-            </div>
 
-            <ul className="cabecalho_mobile">
-              <li className="fechar">
-                <label htmlFor="menu">
-                  <img src="../../../assets/Mobile/navbar-mobile/fechar.svg" />
-                </label>
-              </li>
-              <li>
-                <a className="home" href="#">
-                  Home
-                </a>
-              </li>
-              <li>
-                <a className="mobile_link" href="#">
-                  Nossas lojas
-                </a>
-              </li>
-              <li>
-                <a className="mobile_link" href="#">
-                  Novidades
-                </a>
-              </li>
-              <li>
-                <a className="mobile_link" href="#">
-                  Promoções
-                </a>
-              </li>
-            </ul>
+              <ul className="cabecalho_mobile">
+                <li className="fechar">
+                  <label htmlFor="menu">
+                    <img src="../../../assets/Mobile/navbar-mobile/fechar.svg" />
+                  </label>
+                </li>
+                <li>
+                  <a className="home" href="#">
+                    Home
+                  </a>
+                </li>
+                <li>
+                  <a className="mobile_link" href="#">
+                    Nossas lojas
+                  </a>
+                </li>
+                <li>
+                  <a className="mobile_link" href="#">
+                    Novidades
+                  </a>
+                </li>
+                <li>
+                  <a className="mobile_link" href="#">
+                    Promoções
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
           <div className="cabecalho_direita">
             <form
@@ -88,7 +88,7 @@ const Header = (props) => {
                 <input
                   type="text"
                   placeholder="Digite o produto"
-                  onChange={(e) => setBusca(e.target.value)}
+                  onChange={(e) => setBusca(e.target.value.toLowerCase())}
                 />
               </li>
               <li className="cabecalho_item_button">

@@ -184,11 +184,11 @@
         display: flex;
         flex-direction: column;
         background-color: var(--cor-chumbo);
-        width: 0;
+        padding: 3rem 0;
+        width: 0rem;
         z-index: 4;
-        height: 15.3125rem;
+        height: 13rem;
         gap: 1rem;
-        padding-top: 3rem;
         position: absolute;
         right: 0;
         top: 0;
@@ -196,12 +196,11 @@
     }
 
     .mobile_link, .home {
-        display: none;
         text-decoration: none;
         font-family: var(--fonte-inter);
         font-size: 1rem;
         border-bottom: 1px solid var(--cor-branca);
-        padding-bottom: 0.8rem;
+        padding-bottom: 0.4rem;
     }
 
     .home {
@@ -214,8 +213,7 @@
    
     .botao_hamburguer:checked ~ .cabecalho_mobile {
         transition: 1.5s;
-        padding: 1.5rem;
-        padding-top: 3rem;
+        padding: 3rem 1.5rem;
         width: 9rem;
 
     }
@@ -247,7 +245,7 @@
         height: 0;
         position: absolute;
         top: 1rem;
-        right: 0.8rem;
+        right: 1.5rem;
         transition: 1.5s;
 
     }
