@@ -201,6 +201,9 @@
         font-size: 1rem;
         border-bottom: 1px solid var(--cor-branca);
         padding-bottom: 0.4rem;
+        display: none;
+        transition: ease-out 1.5s;
+
     }
 
     .home {
@@ -236,7 +239,8 @@
     .botao_hamburguer:checked ~ .cabecalho_mobile .fechar,
     .botao_hamburguer:checked ~ .cabecalho_mobile a.home,
     .botao_hamburguer:checked ~ .cabecalho_mobile a.mobile_link {
-        display: block;     
+        display: block; 
+        transition: ease-out 1.5s;    
     }
 
     .fechar {
