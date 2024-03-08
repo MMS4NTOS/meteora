@@ -21,7 +21,7 @@ const Modal = (props) => {
         />
       </div>
       <div className="modal_conteudo">
-        <img src={props.imagem} alt="foto produto" />
+        <img className="produto_imagem"  src={props.imagem} alt="foto produto" />
         <div className="modal_conteudo_descricao">
           <h3 className="produto_nome">{props.nome}</h3>
           <p className="descricao_modal">{props.descricao}</p>
@@ -78,35 +78,42 @@ const Modal = (props) => {
               <label htmlFor="GG">GG</label>
             </div>
           </fieldset>
-          <button onClick={() => {props.adicionarCarrinho(props.produto), setAdicionado(true)}} className="produto_botao">Adicionar à sacola</button>
+          <button
+            onClick={() => {
+              props.adicionarCarrinho(props.produto), setAdicionado(true);
+            }}
+            className="produto_botao"
+          >
+            Adicionar à sacola
+          </button>
         </div>
       </div>
-       { adicionado ? (
-          <dialog className="modal_news">
-            <div className="modal_titulo">
-              <div className="modal_titulo_direita">
-                <img
-                  src="../../../assets/../../../assets/check-circle.svg"
-                  alt="foto produto"
-                />
-                <h2>Adicionado ao carrinho!</h2>
-              </div>
+      {adicionado ? (
+        <dialog className="modal_news">
+          <div className="modal_titulo">
+            <div className="modal_titulo_direita">
               <img
-                onClick={() => setAdicionado(false)}
-                src="../../../assets/../../../assets/x.svg"
-                alt="X"
+                src="../../../assets/../../../assets/check-circle.svg"
+                alt="foto produto"
               />
+              <h2>Adicionado ao carrinho!</h2>
             </div>
-            <div className="modal_conteudo">
-              <p className="descricao_modal_news">
-                Clique no ícone do carrinho para conferir o que você já colocou por lá 😉
-              </p>
-            </div>
-          </dialog>
-        ) : (
-          ""
-        )}
-      
+            <img
+              onClick={() => setAdicionado(false)}
+              src="../../../assets/../../../assets/x.svg"
+              alt="X"
+            />
+          </div>
+          <div className="modal_conteudo">
+            <p className="descricao_modal_news">
+              Clique no ícone do carrinho para conferir o que você já colocou
+              por lá 😉
+            </p>
+          </div>
+        </dialog>
+      ) : (
+        ""
+      )}
     </dialog>
   );
 };
